@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour {
 
 	public int ballCount;
 	public int gameTime;
-	public float ballSize;
 	public float ballSpeed;
     public GameObject ball;
 	private GameObject ballContainer;
