@@ -34,6 +34,6 @@ public class SettingsManager : MonoBehaviour {
 
 	public void SetGameTime() {
 		gameManager.gameTime = (int) GameTime.transform.GetChild(0).gameObject.GetComponent<Slider>().value;
-		GameTime.transform.GetChild(2).gameObject.GetComponent<Text>().text = gameManager.gameTime.ToString() + " seconds";		
+		GameTime.transform.GetChild(2).gameObject.GetComponent<Text>().text = gameManager.gameTime.ToString() + " <size=30>seconds</size>";		
 	}
 }
