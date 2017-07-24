@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour {
 
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour {
 
 	public void MoveBalls() {
 		started = true;
+		ToggleBallEventTriggers(false);
 		StartCoroutine("GameEndTimer", gameTime);
 		foreach (Transform child in ballContainer.transform) {
 			child.gameObject.GetComponent<Ball>().Move();
@@ -61,6 +63,7 @@ public class GameManager : MonoBehaviour {
 
 	private void StopBalls() {
 		choosing = true;
+		ToggleBallEventTriggers(true);
 		foreach (Transform child in ballContainer.transform) {
 			child.gameObject.GetComponent<Ball>().Stop();
 		}
@@ -69,6 +72,12 @@ public class GameManager : MonoBehaviour {
 	private void DestroyBalls() {
 		foreach (Transform child in ballContainer.transform) {
 			Object.Destroy(child.gameObject);
+		}
+	}
+
+	private void ToggleBallEventTriggers(bool state) {
+		foreach (Transform child in ballContainer.transform) {
+			child.gameObject.GetComponent<EventTrigger>().enabled = state;
 		}
 	}
 
