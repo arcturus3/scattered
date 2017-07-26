@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Ball : MonoBehaviour {
 
@@ -30,10 +31,12 @@ public class Ball : MonoBehaviour {
 
 		else if (gameManager.choosing) {
 			if (target) {
-				gameManager.GameOver("You won!");
+				gameManager.GameOver("You win!");
+				GameObject.Find("Win Sound").GetComponent<AudioSource>().Play();
 			}
 			else {
-				gameManager.GameOver("You lost!");
+				gameManager.GameOver("You lose!");
+				GameObject.Find("Lose Sound").GetComponent<AudioSource>().Play();
 			}
 		}
 	}
@@ -49,15 +52,16 @@ public class Ball : MonoBehaviour {
 	public void Remove() {
 		if (target) {
 			gameManager.GameOver("You lost!");
+			GameObject.Find("Lose Sound").GetComponent<AudioSource>().Play();
 		}
-		if (ballContainer.transform.childCount == 1) {
+		else if (ballContainer.transform.childCount == 1) {
 			gameManager.GameOver("You lost!");
+			GameObject.Find("Lose Sound").GetComponent<AudioSource>().Play();
+		}
+		else {
+			GameObject.Find("Click").GetComponent<AudioSource>().Play();
 		}
 		Destroy(gameObject);
-	}
-
-	public void EnableOptionsPanel() {
-		
 	}
 
 	public void EnableBallMenu() {
