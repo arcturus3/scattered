@@ -523,6 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 307848828}
   - component: {fileID: 307848829}
+  - component: {fileID: 307848830}
   m_Layer: 0
   m_Name: Menu Music
   m_TagString: Untagged
@@ -624,6 +625,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &307848830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 307848827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfd20337f22d344397ff591badfa4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &312418321
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,8 +803,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 558910262}
-        m_MethodName: Stop
+      - m_Target: {fileID: 558910263}
+        m_MethodName: StopSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -802,8 +814,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 307848829}
-        m_MethodName: Play
+      - m_Target: {fileID: 307848830}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1107,6 +1119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 444745314}
   - component: {fileID: 444745315}
+  - component: {fileID: 444745316}
   m_Layer: 0
   m_Name: Click
   m_TagString: Untagged
@@ -1208,6 +1221,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &444745316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 444745313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfd20337f22d344397ff591badfa4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &452976740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513597215}
   - component: {fileID: 513597216}
+  - component: {fileID: 513597217}
   m_Layer: 0
   m_Name: Win Sound
   m_TagString: Untagged
@@ -1466,6 +1491,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &513597217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 513597214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfd20337f22d344397ff591badfa4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &518492273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,6 +1666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 558910261}
   - component: {fileID: 558910262}
+  - component: {fileID: 558910263}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -1731,6 +1768,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &558910263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 558910260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfd20337f22d344397ff591badfa4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &583214083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 657121078}
   - component: {fileID: 657121079}
+  - component: {fileID: 657121080}
   m_Layer: 0
   m_Name: Select
   m_TagString: Untagged
@@ -2149,6 +2198,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &657121080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 657121077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfd20337f22d344397ff591badfa4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &660277135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2578,8 +2638,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 558910262}
-        m_MethodName: Stop
+      - m_Target: {fileID: 558910263}
+        m_MethodName: StopSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2589,8 +2649,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 307848829}
-        m_MethodName: Play
+      - m_Target: {fileID: 307848830}
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2925,6 +2985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 949126146}
   - component: {fileID: 949126147}
+  - component: {fileID: 949126148}
   m_Layer: 0
   m_Name: Lose Sound
   m_TagString: Untagged
@@ -3026,6 +3087,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &949126148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 949126145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dfd20337f22d344397ff591badfa4b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &990110023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,9 +4747,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 558910262}
-        m_MethodName: PlayDelayed
-        m_Mode: 4
+      - m_Target: {fileID: 558910263}
+        m_MethodName: PlaySound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4686,8 +4758,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 307848829}
-        m_MethodName: Stop
+      - m_Target: {fileID: 307848830}
+        m_MethodName: StopSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
