@@ -27,6 +27,7 @@ public class Ball : MonoBehaviour {
 		if (!gameManager.started) {
 			target = true;
 			gameManager.MoveBalls();
+			GameObject.Find("Ball Select").GetComponent<AudioSource>().Play();
 		}
 
 		else if (gameManager.choosing) {
