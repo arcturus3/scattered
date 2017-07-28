@@ -48,6 +48,7 @@ public class Ball : MonoBehaviour {
 
 	public void Stop() {		
 		rb.velocity = Vector3.zero;
+		rb.constraints = RigidbodyConstraints.FreezeAll;
 	}
 
 	public void Remove() {
