@@ -51,11 +51,11 @@ public class Ball : MonoBehaviour {
 
 	public void Remove() {
 		if (target) {
-			gameManager.GameOver("You lost!");
+			gameManager.GameOver("You lose!");
 			GameObject.Find("Lose Sound").GetComponent<AudioSource>().Play();
 		}
 		else if (ballContainer.transform.childCount == 1) {
-			gameManager.GameOver("You lost!");
+			gameManager.GameOver("You lose!");
 			GameObject.Find("Lose Sound").GetComponent<AudioSource>().Play();
 		}
 		else {
