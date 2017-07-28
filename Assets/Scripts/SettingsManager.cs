@@ -14,16 +14,16 @@ public class SettingsManager : MonoBehaviour {
 		gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 	}
 	public void UseDefaults() {
-		BallCount.transform.GetChild(0).gameObject.GetComponent<Slider>().value = 20;
+		BallCount.transform.GetChild(0).gameObject.GetComponent<Slider>().value = 4;
 		BallSpeed.transform.GetChild(0).gameObject.GetComponent<Slider>().value = 5; 
-		GameTime.transform.GetChild(0).gameObject.GetComponent<Slider>().value = 30;
+		GameTime.transform.GetChild(0).gameObject.GetComponent<Slider>().value = 6;
 		gameManager.ballCount = 20;
 		gameManager.ballSpeed = 5;
 		gameManager.gameTime = 30;
 	}
 
 	public void SetBallCount() {
-		gameManager.ballCount = (int) BallCount.transform.GetChild(0).gameObject.GetComponent<Slider>().value;
+		gameManager.ballCount = (int) BallCount.transform.GetChild(0).gameObject.GetComponent<Slider>().value * 5;
 		BallCount.transform.GetChild(2).gameObject.GetComponent<Text>().text = gameManager.ballCount.ToString();
 	}
 
@@ -33,7 +33,7 @@ public class SettingsManager : MonoBehaviour {
 	}
 
 	public void SetGameTime() {
-		gameManager.gameTime = (int) GameTime.transform.GetChild(0).gameObject.GetComponent<Slider>().value;
+		gameManager.gameTime = (int) GameTime.transform.GetChild(0).gameObject.GetComponent<Slider>().value * 5;
 		GameTime.transform.GetChild(2).gameObject.GetComponent<Text>().text = gameManager.gameTime.ToString() + " <size=30>seconds</size>";		
 	}
 }
