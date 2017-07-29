@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 public class GameManager : MonoBehaviour {
 
 	public int ballCount;
+	public int ballSpeed;	
 	public int gameTime;
-	public float ballSpeed;
     public GameObject ball;
 	private GameObject ballContainer;
 	private GameObject mainMenu;
