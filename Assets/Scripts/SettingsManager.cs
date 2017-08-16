@@ -15,15 +15,12 @@ public class SettingsManager : MonoBehaviour {
 
 		if (!PlayerPrefs.HasKey("BallCount")) {
 			PlayerPrefs.SetInt("BallCount", 4);
-			Debug.Log("set ballCount 4");
 		}
 		if (!PlayerPrefs.HasKey("BallSpeed")) {
 			PlayerPrefs.SetInt("BallSpeed", 5);
-			Debug.Log("set ballSpeed 5");
 		}
 		if (!PlayerPrefs.HasKey("GameTime")) {
 			PlayerPrefs.SetInt("GameTime", 6);
-			Debug.Log("set gameTime 6");
 		}
 
 		BallCount.transform.GetChild(0).gameObject.GetComponent<Slider>().value = PlayerPrefs.GetInt("BallCount");
@@ -33,6 +30,14 @@ public class SettingsManager : MonoBehaviour {
 		SetBallCount();
 		SetBallSpeed();
 		SetGameTime();
+
+		if (!PlayerPrefs.HasKey("AudioState")) {
+			PlayerPrefs.SetString("AudioState", "on");
+		}
+
+		gameObject.transform.Find("Audio").gameObject.GetComponent<Toggle>().isOn = PlayerPrefs.GetString("AudioState") == "on" ? true : false;
+
+		gameObject.transform.Find("Audio").gameObject.GetComponent<AudioToggle>().Toggle();
 
 		gameObject.SetActive(false);
 	}
