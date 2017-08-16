@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour {
 						intersects = true;
 					}
 				}
+
+				if (Mathf.Abs(vector.x) <= 1 && Mathf.Abs(vector.y - 2) <= 1 && Mathf.Abs(vector.z) <= 1) {
+					intersects = true; //too close to camera
+					Debug.Log("too close to camera");
+				}
 			} while (intersects);
 
 			balls[i] = vector;			
