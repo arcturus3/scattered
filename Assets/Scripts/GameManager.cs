@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour {
 		outcomeMenu.SetActive(false);
 	}
 
-	private void SpawnBalls() {
-		Vector3[] balls = new Vector3[ballCount];
+	private void SpawnBalls2() {
+		Vector3[] ballPositions = new Vector3[ballCount];
 
 		for (int i = 0; i < ballCount; i++) {
 			Vector3 vector;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
 				intersects = false;
 
 				for (int j = 0; j < i; j++) {
-					if (Mathf.Abs(vector.x - balls[j].x) <= 1 && Mathf.Abs(vector.y - balls[j].y) <= 1 && Mathf.Abs(vector.z - balls[j].z) <= 1) {
+					if (Mathf.Abs(vector.x - ballPositions[j].x) <= 1 && Mathf.Abs(vector.y - ballPositions[j].y) <= 1 && Mathf.Abs(vector.z - ballPositions[j].z) <= 1) {
 						intersects = true;
 					}
 				}
@@ -50,8 +50,50 @@ public class GameManager : MonoBehaviour {
 				}
 			} while (intersects);
 
-			balls[i] = vector;			
+			ballPositions[i] = vector;			
 			GameObject newBall = Instantiate(ball, vector, Quaternion.identity);
+			newBall.transform.parent = ballContainer.transform;
+		}
+	}
+
+	private void SpawnBalls() {
+		Vector3[] ballPositions = new Vector3[ballCount];
+
+		for (int i = 0; i < ballCount; i++) {
+			Vector3 ballPosition;
+			bool validPosition;
+
+			do {
+				Ray raycast = new Ray(Vector3.zero, Random.onUnitSphere);
+				RaycastHit raycastHit;
+				Vector3 hitPosition;
+				
+				//raycast.origin = raycast.GetPoint(100);
+				raycast.direction = -raycast.direction;
+				
+
+				Debug.DrawRay(raycast.origin, raycast.direction, Color.white, 100f);
+
+				if (Physics.Raycast(raycast, out raycastHit)) {
+					hitPosition = raycastHit.point;
+				}
+
+				ballPosition = hitPosition * Random.Range(0f, (hitPosition.magnitude - 1)); //balls don't spawn at edges
+				validPosition = false;
+
+				for (int j = 0; j < i; j++) {
+					if (Mathf.Abs(ballPosition.x - ballPositions[j].x) <= 1 && Mathf.Abs(ballPosition.y - ballPositions[j].y) <= 1 && Mathf.Abs(ballPosition.z - ballPositions[j].z) <= 1) {
+						validPosition = true;
+					}
+				}
+
+				if (Mathf.Abs(ballPosition.x) <= 1 && Mathf.Abs(ballPosition.y - 2) <= 1 && Mathf.Abs(ballPosition.z) <= 1) {
+					validPosition = true; //too close to camera
+				}
+			} while (validPosition);
+
+			ballPositions[i] = ballPosition;			
+			GameObject newBall = Instantiate(ball, ballPosition, Quaternion.identity);
 			newBall.transform.parent = ballContainer.transform;
 		}
 	}
