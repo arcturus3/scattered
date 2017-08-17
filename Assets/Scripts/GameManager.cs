@@ -39,9 +39,7 @@ public class GameManager : MonoBehaviour {
 				if (Physics.Raycast(ballPosition, Vector3.up) && Physics.OverlapSphere(ballPosition, 0.5f).Length == 0) {
 					validPosition = true;
 				}
-				else {
-					Debug.Log("bad position");
-					Debug.DrawRay(ballPosition, Vector3.up * 100, Color.white, 100);					
+				else {					
 					validPosition = false;
 				}
 
