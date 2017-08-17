@@ -18,13 +18,11 @@ public class AudioToggle : MonoBehaviour {
 			AudioListener.volume = 1;
 			gameObject.GetComponentInChildren<Image>().sprite = audioOff;
 			PlayerPrefs.SetString("AudioState", "on");
-			Debug.Log("AudioToggle: on");
 		}
 		else {
 			AudioListener.volume = 0;
 			gameObject.GetComponentInChildren<Image>().sprite = audioOn;
-			PlayerPrefs.SetString("AudioState", "off");
-			Debug.Log("AudioToggle: off");			
+			PlayerPrefs.SetString("AudioState", "off");		
 		}
 	}
 }
