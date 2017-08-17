@@ -33,14 +33,9 @@ public class SettingsManager : MonoBehaviour {
 
 		if (!PlayerPrefs.HasKey("AudioState")) {
 			PlayerPrefs.SetString("AudioState", "on");
-			Debug.Log("AudioState: on");
 		}
 
 		gameObject.transform.Find("Audio").gameObject.GetComponent<Toggle>().isOn = PlayerPrefs.GetString("AudioState") == "on" ? true : false;
-		Debug.Log("AudioToggle.isOn: " + gameObject.transform.Find("Audio").gameObject.GetComponent<Toggle>().isOn);
-
-		//gameObject.transform.Find("Audio").gameObject.GetComponent<AudioToggle>().Toggle();
-
 		gameObject.SetActive(false);
 	}
 
