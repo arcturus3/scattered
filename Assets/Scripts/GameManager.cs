@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour {
 	public bool started = false;
 	[HideInInspector]
 	public bool choosing = false;
+	private bool setNewGameMenuCameraRotation = true;
 
 	private void Start() {
 		ballContainer = GameObject.FindGameObjectWithTag("BallContainer");
@@ -26,6 +27,22 @@ public class GameManager : MonoBehaviour {
 		outcomeMenu = GameObject.FindGameObjectWithTag("OutcomeMenu");	
 		gameMenu.SetActive(false);
 		outcomeMenu.SetActive(false);
+	}
+
+	void Update() {
+		if (!mainMenu.active && !outcomeMenu.active) {
+			if (Camera.main.transform.eulerAngles.x > 65 && Camera.main.transform.eulerAngles.x < 115) {
+				gameMenu.SetActive(true);
+				if (setNewGameMenuCameraRotation) {
+					gameMenu.transform.rotation = Quaternion.Euler(270, Camera.main.transform.eulerAngles.y + 180, 0);
+					setNewGameMenuCameraRotation = false;
+				}
+			}
+			else {
+				gameMenu.SetActive(false);
+				setNewGameMenuCameraRotation = true;
+			}
+		}
 	}
 
 	private void SpawnBalls() {

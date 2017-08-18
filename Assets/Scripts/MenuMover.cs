@@ -7,12 +7,12 @@ public class MenuMover : MonoBehaviour {
 	Transform transform;
 	Camera camera;
 
-	void Start () {
+	void Start() {
 		transform = GetComponent<Transform>();
 		camera = Camera.main;
 	}
 	
-	void Update () {
+	void Update() {
 		if (camera.transform.eulerAngles.y < 90 || camera.transform.eulerAngles.y > 270) {
 			transform.position = new Vector3(0, 5, 5);
 			transform.rotation = Quaternion.Euler(0, 0, 0);

@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 266542659}
   - component: {fileID: 266542658}
   - component: {fileID: 266542657}
+  - component: {fileID: 266542662}
   m_Layer: 5
   m_Name: Outcome Menu
   m_TagString: OutcomeMenu
@@ -699,6 +700,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 2.76}
   m_SizeDelta: {x: 1000, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &266542662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 266542656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0bd5b5162378546bbd27a4170d1aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &307848827
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,6 +4821,7 @@ GameObject:
   - component: {fileID: 1586225983}
   - component: {fileID: 1586225982}
   - component: {fileID: 1586225981}
+  - component: {fileID: 1586225986}
   m_Layer: 5
   m_Name: Game Menu
   m_TagString: GameMenu
@@ -4915,6 +4928,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.1}
   m_SizeDelta: {x: 120, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1586225986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1586225980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb33bc417a80dbd49850647aae9ec1f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1685879078
 GameObject:
   m_ObjectHideFlags: 0
