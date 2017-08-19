@@ -14,11 +14,11 @@ public class MenuMover : MonoBehaviour {
 	
 	void Update() {
 		if (camera.transform.eulerAngles.y < 90 || camera.transform.eulerAngles.y > 270) {
-			transform.position = new Vector3(0, 5, 5);
+			transform.position = new Vector3(0, 3.5f, 3);
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 		}
 		else {
-			transform.position = new Vector3(0, 5, -5);
+			transform.position = new Vector3(0, 3.5f, -3);
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
 	}
