@@ -12,10 +12,10 @@ public class BallColorButton {
 	public bool Selected {get; set;}
 	public GameObject Button {get;}
 
-	public BallColorButton(int id, string value, GameObject but) {
+	public BallColorButton(int id, string val, GameObject btn) {
 		ID = id;
-		ColorValue = value;
-		Button = but;
+		ColorValue = val;
+		Button = btn;
 		Unlocked = false;
 		Selected = false;
 
