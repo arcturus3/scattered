@@ -8,7 +8,7 @@ public class ShopManager : MonoBehaviour {
 
 	public GameObject ballColorButton;
 	public GameObject selectionIndicator;
-	private string[] colors = {"000000", "E53935", "8E24AA", "1E88E5", "00897B", "43A047", "FFB300", "6D4C41"};
+	public string[] colors = {"000000", "E53935", "8E24AA", "1E88E5", "00897B", "43A047", "FFB300", "6D4C41"};
 	private BallColorButton[] buttons;
 
 	void Start() {

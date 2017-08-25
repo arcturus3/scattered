@@ -3469,106 +3469,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 5e26c876e90a4884f9dd68fa54da6674, type: 3}
---- !u!1001 &759482712
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -308.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224775142034860104, guid: a1ddc9f0ec4ad2541b391f57f6332911,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: a1ddc9f0ec4ad2541b391f57f6332911, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &761418989
 GameObject:
   m_ObjectHideFlags: 0
@@ -5828,6 +5728,7 @@ MonoBehaviour:
   ballSpeed: 5
   gameTime: 30
   ball: {fileID: 1195981482711194, guid: 08b51257291104947b03f79df19d491a, type: 2}
+  shopManager: {fileID: 2020072381}
   started: 0
   choosing: 0
 --- !u!4 &1580704334
@@ -7100,6 +7001,15 @@ MonoBehaviour:
   ballColorButton: {fileID: 1540888312197328, guid: a1ddc9f0ec4ad2541b391f57f6332911,
     type: 2}
   selectionIndicator: {fileID: 1434613266}
+  colors:
+  - 000000
+  - E53935
+  - 8E24AA
+  - 1E88E5
+  - 00897B
+  - 43A047
+  - FFB300
+  - 6D4C41
 --- !u!1 &2052659382
 GameObject:
   m_ObjectHideFlags: 0
