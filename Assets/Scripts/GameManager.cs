@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class GameManager : MonoBehaviour {
 
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	private GameObject mainMenu;
 	private GameObject gameMenu;
 	private GameObject outcomeMenu;
+	public ShopManager shopManager;
 	[HideInInspector]
 	public bool started = false;
 	[HideInInspector]
@@ -46,12 +48,19 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void SpawnBalls() {
+		string hexColor = shopManager.colors[PlayerPrefs.GetInt("BallColorID")];
+		ball.GetComponent<Renderer>().sharedMaterial.color = new Color32(
+			(byte) Convert.ToInt32(hexColor.Substring(0, 2), 16),
+			(byte) Convert.ToInt32(hexColor.Substring(2, 2), 16),
+			(byte) Convert.ToInt32(hexColor.Substring(4, 2), 16),
+			255);
+
 		for (int i = 0; i < ballCount; i++) {
 			Vector3 ballPosition;
 			bool validPosition;
 
 			do {
-				ballPosition = new Vector3(Random.Range(-9.5f, 9.5f), Random.Range(0.5f, 4.5f), Random.Range(-9.5f, 9.5f));
+				ballPosition = new Vector3(UnityEngine.Random.Range(-9.5f, 9.5f), UnityEngine.Random.Range(0.5f, 4.5f), UnityEngine.Random.Range(-9.5f, 9.5f));
 
 				if (Physics.Raycast(ballPosition, Vector3.up) && Physics.OverlapSphere(ballPosition, 0.5f).Length == 0) {
 					validPosition = true;
@@ -89,7 +98,7 @@ public class GameManager : MonoBehaviour {
 
 	private void DestroyBalls() {
 		foreach (Transform child in ballContainer.transform) {
-			Object.Destroy(child.gameObject);
+			UnityEngine.Object.Destroy(child.gameObject);
 		}
 	}
 
