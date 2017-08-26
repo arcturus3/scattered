@@ -46,6 +46,7 @@ public class ShopManager : MonoBehaviour {
 	}
 
 	public void ShowAd() {
+		Debug.Log("ShowAd called");
 		if (Advertisement.IsReady()) {
 			Advertisement.Show();
 		}
