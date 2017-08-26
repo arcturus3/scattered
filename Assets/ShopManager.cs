@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class ShopManager : MonoBehaviour {
 
@@ -42,5 +43,11 @@ public class ShopManager : MonoBehaviour {
 
 	private void SetSelectionIndicatorPos(int id) {
 		selectionIndicator.GetComponent<RectTransform>().localPosition = new Vector3((150 * (id % 4)) - 225, -150 * (((int) id / 4) + 1), 0);
+	}
+
+	public void ShowAd() {
+		if (Advertisement.IsReady()) {
+			Advertisement.Show();
+		}
 	}
 }
