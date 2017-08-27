@@ -13,6 +13,10 @@ public class ShopManager : MonoBehaviour {
 	private BallColorButton[] buttons;
 
 	void Start() {
+		if (!PlayerPrefs.HasKey("LockedBallColors")) {
+			PlayerPrefs.SetString("LockedBallColors", "1 2 3 4 5 6 7 ");
+		}
+		
 		buttons = new BallColorButton[colors.Length]; 
 		int row = 0;
 		int col = 0;
@@ -21,7 +25,12 @@ public class ShopManager : MonoBehaviour {
 				int ballCount = (row * 4) + col;
 				GameObject newButton = Instantiate(ballColorButton, GameObject.Find("Button Container").transform);
 				newButton.GetComponent<RectTransform>().localPosition = new Vector3((150 * col) - 225, -150 * (row + 1), 0);
-				buttons[ballCount] = new BallColorButton(ballCount, colors[ballCount], newButton);
+				if (PlayerPrefs.GetString("LockedBallColors").Contains(ballCount.ToString() + " ") && PlayerPrefs.GetString("LockedBallColors").Length != 0) {
+					buttons[ballCount] = new BallColorButton(ballCount, colors[ballCount], newButton, true);
+				}
+				else {
+					buttons[ballCount] = new BallColorButton(ballCount, colors[ballCount], newButton, false);
+				}
 				newButton.GetComponent<Button>().onClick.AddListener(delegate {OnColorSelect(ballCount);});
 				col++;
 			}
@@ -29,16 +38,15 @@ public class ShopManager : MonoBehaviour {
 			col = 0;
 		}
 		
-		if (!PlayerPrefs.HasKey("BallColorID")) {
-			PlayerPrefs.SetInt("BallColorID", 0);
-		}
 		SetSelectionIndicatorPos(PlayerPrefs.GetInt("BallColorID"));
 	}
 
 	public void OnColorSelect(int id) {
-		PlayerPrefs.SetInt("BallColorID", id);
-		SetSelectionIndicatorPos(PlayerPrefs.GetInt("BallColorID"));
-		GameObject.Find("Click").GetComponent<AudioSource>().Play();
+		if (!PlayerPrefs.GetString("LockedBallColors").Contains(id.ToString() + " ") || PlayerPrefs.GetString("LockedBallColors").Length == 0) {
+			PlayerPrefs.SetInt("BallColorID", id);
+			SetSelectionIndicatorPos(PlayerPrefs.GetInt("BallColorID"));
+			GameObject.Find("Click").GetComponent<AudioSource>().Play();
+		}
 	}
 
 	private void SetSelectionIndicatorPos(int id) {
@@ -46,9 +54,39 @@ public class ShopManager : MonoBehaviour {
 	}
 
 	public void ShowAd() {
-		Debug.Log("ShowAd called");
-		if (Advertisement.IsReady()) {
-			Advertisement.Show();
+		Debug.Log("ShowAd was called");
+		var options = new ShowOptions();
+		options.resultCallback = HandleShowResult;
+
+		Advertisement.Show("rewardedVideo", options);
+	}
+
+	void HandleShowResult(ShowResult result) {
+		if (result == ShowResult.Finished) {
+
+
+			Debug.Log("Video completed - Offer a reward to the player");
+
+
+			if (PlayerPrefs.GetString("LockedBallColors").Length == 0) {
+				return;
+			}
+			int random = UnityEngine.Random.Range(0, PlayerPrefs.GetString("LockedBallColors").Length);
+			int randomID;
+			if (PlayerPrefs.GetString("LockedBallColors")[random] == ' ') {
+				randomID = PlayerPrefs.GetString("LockedBallColors")[random - 1] - '0';
+			}
+			else {
+				randomID = PlayerPrefs.GetString("LockedBallColors")[random] - '0';
+			}
+
+			if (PlayerPrefs.GetString("LockedBallColors")[random] == ' ') {
+				PlayerPrefs.SetString("LockedBallColors", PlayerPrefs.GetString("LockedBallColors").Remove(random - 1, 2));
+			}
+			else {
+				PlayerPrefs.SetString("LockedBallColors", PlayerPrefs.GetString("LockedBallColors").Remove(random, 2));
+			}
+			buttons[randomID].Unlock();
 		}
 	}
 }
