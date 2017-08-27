@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour {
 		outcomeMenu = GameObject.FindGameObjectWithTag("OutcomeMenu");	
 		gameMenu.SetActive(false);
 		outcomeMenu.SetActive(false);
+		if (!PlayerPrefs.HasKey("BallColorID")) {
+			PlayerPrefs.SetInt("BallColorID", 0);
+		}
 	}
 
 	void Update() {
