@@ -598,7 +598,7 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: 7f022986-8669-4ab8-aa1d-0295af73f6f9
-  projectName: Bounce
+  projectName: Scattered
   organizationId: king_arthur
   cloudEnabled: 0
   enableNewInputSystem: 0
