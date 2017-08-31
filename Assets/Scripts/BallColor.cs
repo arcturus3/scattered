@@ -32,5 +32,6 @@ public class BallColorButton {
 
 	public void Unlock() {
 		Locked = false;
+		Button.transform.GetChild(0).gameObject.SetActive(false);
 	}
 }

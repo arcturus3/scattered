@@ -54,7 +54,6 @@ public class ShopManager : MonoBehaviour {
 	}
 
 	public void ShowAd() {
-		Debug.Log("ShowAd was called");
 		var options = new ShowOptions();
 		options.resultCallback = HandleShowResult;
 
@@ -63,11 +62,6 @@ public class ShopManager : MonoBehaviour {
 
 	void HandleShowResult(ShowResult result) {
 		if (result == ShowResult.Finished) {
-
-
-			Debug.Log("Video completed - Offer a reward to the player");
-
-
 			if (PlayerPrefs.GetString("LockedBallColors").Length == 0) {
 				return;
 			}
