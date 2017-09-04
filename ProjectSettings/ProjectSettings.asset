@@ -217,8 +217,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Arti/Documents/Unity Projects/Scattered/user.keystore
-  AndroidKeyaliasName: key
+  AndroidKeystoreName: C:/Users/Arti/Documents/Unity Projects/UnityKeystore.keystore
+  AndroidKeyaliasName: scatteredkey
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
