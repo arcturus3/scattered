@@ -2686,8 +2686,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Try to keep track of one ball as it bounces around, and be careful not
-    to get it mixed up with the others!
+  m_Text: 'Keep track of a ball as it bounces around the room, don''t mix it up with
+    the others!
 
 
     To start the game, select a ball. After the balls stop moving, select the same
