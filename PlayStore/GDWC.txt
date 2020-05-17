@@ -1,0 +1,12 @@
+Game name: Scattered
+Team name: AS Games
+Team members: Arti Schmidt
+Category: HOBBY
+
+Description: Keep track of a ball in VR bouncing around in a room filled with ones that all look the same. See how much you can increase the difficulty before it becomes impossible. A menu with restart and return home options can be found during a game by looking straight down.
+
+Hardware requirements: Google Cardboard VR viewer, phone running Android 4.4 or higher, screen size between 4 and 6 inches.
+A viewer can be found here: https://store.google.com/product/google_cardboard
+
+Install and usage instructions: Install from Google Play here: https://play.google.com/store/apps/details?id=com.atschmidt.Scattered
+Launch the app, and place phone in a Google Cardboard VR viewer. Selection is performed via the click button on the viewer.
